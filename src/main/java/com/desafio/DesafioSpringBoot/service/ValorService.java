@@ -11,7 +11,7 @@ import java.util.List;
 public class ValorService {
 
     public String calcular(List<Double> valores){
-        return "Média: " + Calcular.media(valores) + "\nDesvio padrão: " + Calcular.desvioPadrao(valores) + "\nMediana: " + Calcular.mediana(valores);
+        return "Quantidade de dados recebidos: " + valores.size() + "\nMédia: " + Calcular.media(valores) + "\nDesvio padrão: " + Calcular.desvioPadrao(valores) + "\nMediana: " + Calcular.mediana(valores);
     }
 
     public Valor coletarDados(List<Double> valores) {

@@ -5,6 +5,9 @@ import java.util.List;
 
 public class Calcular {
     public static double media(List<Double> valores){
+        if (valores.isEmpty()) {
+            throw new IllegalArgumentException("A lista de valores não pode estar vazia.");
+        }
         double total = 0;
 
         //Para cada valor dentro de valores, soma-o ao total
@@ -15,6 +18,9 @@ public class Calcular {
         return total / valores.size();
     }
     public static double desvioPadrao(List<Double> valores){
+        if (valores.isEmpty()) {
+            throw new IllegalArgumentException("A lista de valores não pode estar vazia.");
+        }
         //Faz o cálculo da média
         double media = media(valores);
 
@@ -28,6 +34,9 @@ public class Calcular {
         return Math.sqrt(variancia);
     }
     public static double mediana(List<Double> valores){
+        if (valores.isEmpty()) {
+            throw new IllegalArgumentException("A lista de valores não pode estar vazia.");
+        }
         //Ordenar valores em ordem
         Collections.sort(valores);
 
