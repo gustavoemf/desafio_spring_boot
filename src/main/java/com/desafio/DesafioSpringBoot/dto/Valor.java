@@ -13,4 +13,7 @@ public class Valor {
     public Valor(List<Double> valor) {
         this.valor = valor;
     }
+
+    public Valor() {
+    }
 }

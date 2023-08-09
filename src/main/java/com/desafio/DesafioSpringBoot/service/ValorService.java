@@ -10,10 +10,8 @@ import java.util.List;
 @Service
 public class ValorService {
 
-    public void calcular(List<Double> valores){
-        Calcular.media(valores);
-        Calcular.desvioPadrao(valores);
-        Calcular.mediana(valores);
+    public String calcular(List<Double> valores){
+        return "Média: " + Calcular.media(valores) + "\nDesvio padrão: " + Calcular.desvioPadrao(valores) + "\nMediana: " + Calcular.mediana(valores);
     }
 
     public Valor coletarDados(List<Double> valores) {
