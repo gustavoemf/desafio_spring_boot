@@ -7,6 +7,7 @@ public class Calcular {
     public static double media(List<Double> valores){
         double total = 0;
 
+        //Para cada valor dentro de valores, soma-o ao total
         for (Double valor: valores) {
             total += valor;
         }
@@ -14,15 +15,25 @@ public class Calcular {
         return total / valores.size();
     }
     public static double desvioPadrao(List<Double> valores){
-        double valorDesvioPadrao = 0;
+        //Faz o cálculo da média
+        double media = media(valores);
 
-        return valorDesvioPadrao;
+        double somaDosQuadradosDasDiferencas = 0.0;
+        for (double valor : valores) {
+            double diferenca = valor - media;
+            somaDosQuadradosDasDiferencas += diferenca * diferenca;
+        }
+
+        double variancia = somaDosQuadradosDasDiferencas / (valores.size() - 1);
+        return Math.sqrt(variancia);
     }
     public static double mediana(List<Double> valores){
+        //Ordenar valores em ordem
         Collections.sort(valores);
 
         int tamanho = valores.size();
 
+        //Verifica se o valor da mediana é ímpar/único, se não faz o cálculo de divisão
         if (tamanho % 2 != 0) {
             int indiceMediana = tamanho / 2;
             return valores.get(indiceMediana);
